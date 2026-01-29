@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OST Player</title>
+  
+  <meta name="description" content="Undertale OST Player">
+  <meta name="keywords" content="Undertale, OST, Music, Player, Deltarune, Soundtrack, Game Music, Undertale Music, Deltarune Music, Video Game Soundtrack">
+  <meta name="author" content="Hudge">
+
+  <style>
+    body {
+        text-align: center;
+        background-color: rgb(0, 72, 72);
+    }
+    @font-face {
+        font-family: 'songfont';
+        src: url(songfont.ttf) format('truetype');
+    }
+    @font-face {
+        font-family: 'NowPlaying';
+        src: url('NowPlaying.ttf') format('truetype');
+    }
+    #nowplaying {
+        font-family: 'NowPlaying', sans-serif;
+        font-size: 48px;
+        color: lightseagreen;
+    }
+    button {
+        margin: 10px;
+        padding: 10px;
+        border: white 2px solid;
+        font-family: 'songfont', sans-serif;
+    }
+    h2 {
+        background-color: aquamarine;
+        border: white 2px solid;
+    }
+    button:hover {
+        transform: scale(1.1);
+        transition: 0.2s;
+    }
+    button:active {
+        transform: scale(1.2);
+        transition: 0.1s;
+    }
+  </style>
+  <link rel="icon" href="icon.jpg" type="image/jpg">
+</head>
+<body>
+    <h2 id="nowplaying">Now Playing: Nothing</h2>
+
+  <button style="background-color: #0C5283;" onclick="playSong('sans.mp3', 'sans.')">sans.</button>
+  <button style="background-color: #0f9ea5;"  onclick="playSong('Bonetrousle.mp3', 'Bonetrousle')">Bonetrousle</button>
+  <button style="background-color: #00ced1"  onclick="playSong('spearofjustice.mp3', 'Spear of Justice')">Spear of Justice</button>
+  <button style="background-color: #00dcd9;"  onclick="playSong('ASGORE.mp3', 'ASGORE')">ASGORE</button>
+  <button style="background-color: #49e5dd;"  onclick="playSong('Bergentrückung.mp3', 'Bergentruckung')">Bergentruckung</button>
+  <button style="background-color: #5fe4ea;"  onclick="playSong('Death by Glamour.mp3', 'Death by Glamour')">Death by Glamour</button>
+  <button style="background-color: #92e8f1;"  onclick="playSong('Determination.mp3', 'Determination')">Determination</button>
+  <button style="background-color: #0e5386;"  onclick="playSong('Fallen Down (Reprise).mp3', 'Fallen Down (Reprise)')">Fallen Down (Reprise)</button>
+  <button style="background-color: #0e9bbb;"  onclick="playSong('Finale.mp3', 'Finale')">Finale</button>
+  <button style="background-color: #00c2df;"  onclick="playSong('His Theme.mp3', 'His Theme')">His Theme</button>
+  <button style="background-color: #3de3e5;"  onclick="playSong('Hopes and Dreams.mp3', 'Hopes and Dreams')">Hopes and Dreams</button>
+  <button style="background-color: #60e1eb;"  onclick="playSong('It\'s Showtime!.mp3', 'It\'s Showtime!')">It's Showtime!</button>
+  <button style="background-color: #81d9f8;"  onclick="playSong('Metal Crusher.mp3', 'Metal Crusher')">Metal Crusher</button>
+  <button style="background-color: #a2d8f7;"  onclick="playSong('NGAHHH!!.mp3', 'NGAHHH!!')">NGAHHH!!</button>
+  <button style="background-color: #104486;"  onclick="playSong('Oh! Dungeon.mp3', 'Oh! Dungeon')">Oh! Dungeon</button>
+  <button style="background-color: #1379b2;"  onclick="playSong('Oh! One True Love.mp3', 'Oh! One True Love')">Oh! One True Love</button>
+  <button style="background-color: #008dd8;"  onclick="playSong('SAVE the World.mp3', 'SAVE the World')">SAVE the World</button>
+  <button style="background-color: #0d94e8;"  onclick="playSong('Spider Dance.mp3', 'Spider Dance')">Spider Dance</button>
+  <button style="background-color: #63b8f3;"  onclick="playSong('Undertale.mp3', 'Undertale')">Undertale</button>
+  <button style="background-color: #7cbaf7;"  onclick="playSong('Battle Against a True Hero.mp3', 'Battle Against a True Hero')">Battle Against a True Hero</button>
+  <button style="background-color: #9bc2f9;"  onclick="playSong('Power of -NEO-.mp3', 'Power of -NEO-')">Power of -NEO-</button>
+  <button style="background-color: #154497;"  onclick="playSong('MEGALOVANIA.mp3', 'MEGALOVANIA')">MEGALOVANIA</button>
+  <button style="background-color: #1460be;"  onclick="playSong('Its TV Time!.mp3', 'Its TV Time!')">Its TV Time!</button>
+  <button style="background-color: #0e60d7;"  onclick="playSong('A CYBER\'S WORLD.mp3', 'A CYBER\'S WORLD')">A CYBER'S WORLD</button>
+  <button style="background-color: #0058f3;"  onclick="playSong('Attack of the Killer Queen.mp3', 'Attack of the Killer Queen')">Attack of the Killer Queen</button>
+  <button style="background-color: #5e99f8;"  onclick="playSong('Dark Sanctuary.mp3', 'Dark Sanctuary')">Dark Sanctuary</button>
+  <button style="background-color: #6da2f9;"  onclick="playSong('Field of Hopes and Dreams.mp3', 'Field of Hopes and Dreams')">Field of Hopes and Dreams</button>
+  <button style="background-color: #7cabf9;"  onclick="playSong('Neverending Night.mp3', 'Neverending Night')">Neverending Night</button>
+  <button style="background-color: #163599;"  onclick="playSong('Rude Buster.mp3', 'Rude Buster')">Rude Buster</button>
+  <button style="background-color: #173ec1;"  onclick="playSong('The Third Sanctuary.mp3', 'The Third Sanctuary')">The Third Sanctuary</button>
+  <button style="background-color: #0f3ada;"  onclick="playSong('THE WORLD REVOLVING.mp3', 'THE WORLD REVOLVING')">THE WORLD REVOLVING</button>
+  <button style="background-color: #0030ef;"  onclick="playSong('Hammer of Justice.mp3', 'Hammer of Justice')">Hammer of Justice</button>
+  <button style="background-color: #0031fd;"  onclick="playSong('Asgore Runs Over Dess.mp3', 'Asgore Runs Over Dess')">Asgore Runs Over Dess</button>
+
+  <br><br>
+
+  <button style="background-color: grey; color: white;" onclick="stopAll()">STOP</button>
+
+  <script>
+    let currentAudio = null;
+    const nowplayingText = document.getElementById("nowplaying");
+
+    function playSong(file, title) {
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      }
+
+      currentAudio = new Audio(file);
+      currentAudio.play();
+
+      nowplayingText.textContent = "Now Playing: " + title;
+    }
+
+    function stopAll() {
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+
+        nowplayingText.textContent = "Now Playing: Nothing";
+      }
+    }
+  </script>
+
+</body>
+</html>
