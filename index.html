@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OST Player</title>
+  
+  <meta name="description" content="Undertale OST Player">
+  <meta name="keywords" content="Undertale, OST, Music, Player, Deltarune, Soundtrack, Game Music, Undertale Music, Deltarune Music, Video Game Soundtrack">
+  <meta name="author" content="Hudge">
+
+  <style>
+    body {
+        background-color: var(--bg);
+        color: var(--text);
+        text-align: center;
+    }
+    [data-theme="blue"] {
+        --bg: rgb(0, 72, 72);
+        --text: black;
+        --buttonbg1: #004b57;
+        --buttonbg2: #006a89;
+        --buttonbg3: #007aa2;
+        --buttonbg4: #008dc0;
+        --buttonbg5: #009dcf;
+        --buttonbg6: #86beda;
+        --buttonbg7: #aed3e3;
+        --buttonbg8: #003f5d;
+        --buttonbg9: #00527c;
+        --buttonbg10: #00609c;
+        --buttonbg11: #006db2;
+        --buttonbg12: #4e97d1;
+        --buttonbg13: #7bb4e3;
+        --buttonbg14: #a3ceef;
+        --buttonbg15: #002f5c;
+        --buttonbg16: #004987;
+        --buttonbg17: #004f92;
+        --buttonbg18: #00569d;
+        --buttonbg19: #3e77b6;
+        --buttonbg20: #90b1db;
+        --buttonbg21: #bbd2ec;
+        --buttonbg22: #002a5e;
+        --buttonbg23: #003777;
+        --buttonbg24: #003b85;
+        --buttonbg25: #003a88;
+        --buttonbg26: #6c85bd;
+        --buttonbg27: #c5d4eb;
+        --buttonbg28: #dfe9f5;
+        --buttonbg29: #001a5f;
+        --buttonbg30: #00216d;
+        --buttonbg31: #002a7c;
+        --buttonbg32: #002d82;
+        --buttonbg33: #5b61a1;
+        --buttonbg34: #9fa3c8;
+        --nowplayingbg: aquamarine;
+        --nowplayingtext: lightseagreen;
+    }
+    [data-theme="green"] {
+        --bg: rgb(121, 255, 121);
+        --text: black;
+        --buttonbg1: #046205;
+        --buttonbg2: #038b02;
+        --buttonbg3: #04ce03;
+        --buttonbg4: #05ee07;
+        --buttonbg5: #05ff04;
+        --buttonbg6: #37f731;
+        --buttonbg7: #77fc70;
+        --buttonbg8: #088f44;
+        --buttonbg9: #0ba94e;
+        --buttonbg10: #09c25b;
+        --buttonbg11: #0bd650;
+        --buttonbg12: #10f271;
+        --buttonbg13: #48f78e;
+        --buttonbg14: #8bf7b6;
+        --buttonbg15: #137f41;
+        --buttonbg16: #20ad4e;
+        --buttonbg17: #3ab64e;
+        --buttonbg18: #64bc61;
+        --buttonbg19: #9dd295;
+        --buttonbg20: #bedbb9;
+        --buttonbg21: #e7f9e4;
+        --buttonbg22: #479745;
+        --buttonbg23: #4bb74c;
+        --buttonbg24: #50bb64;
+        --buttonbg25: #96cc6c;
+        --buttonbg26: #c6de9b;
+        --buttonbg27: #aeffae;
+        --buttonbg28: #cde5cd;
+        --buttonbg29: #006600;
+        --buttonbg30: #008000;
+        --buttonbg31: #00b000;
+        --buttonbg32: #2acf2a;
+        --buttonbg33: #64e264;
+        --buttonbg34: #99ff99;
+        --nowplayingbg: rgb(111, 196, 111);
+        --nowplayingtext: darkgreen;
+    }
+    @font-face {
+        font-family: 'NowPlaying';
+        src: url('NowPlaying.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'songfont';
+        src: url('songfont.ttf') format('truetype');
+    }
+    #nowplaying {
+        font-family: 'NowPlaying', sans-serif;
+        font-size: 48px;
+        color: var(--nowplayingtext);
+        background-color: var(--nowplayingbg);
+        border: white 2px solid;
+    }
+    button {
+        margin: 10px;
+        padding: 10px;
+        border: white 2px solid;
+        font-family: 'songfont', sans-serif;
+    }
+    button:hover {
+        transform: scale(1.1);
+        transition: 0.2s;
+    }
+    button:active {
+        transform: scale(1.2);
+        transition: 0.1s;
+    }
+  </style>
+  <link rel="icon" href="icon.jpg" type="image/jpg">
+</head>
+<body data-theme="green">
+  <h2 id="nowplaying" style="text-align: center;">Now Playing: Nothing</h2>
+
+  <button style="background-color: var(--buttonbg1);" onclick="playSong('sans.mp3', 'sans.')">sans.</button>
+  <button style="background-color: var(--buttonbg2);"  onclick="playSong('Bonetrousle.mp3', 'Bonetrousle')">Bonetrousle</button>
+  <button style="background-color: var(--buttonbg3)"  onclick="playSong('spearofjustice.mp3', 'Spear of Justice')">Spear of Justice</button>
+  <button style="background-color: var(--buttonbg4);"  onclick="playSong('ASGORE.mp3', 'ASGORE')">ASGORE</button>
+  <button style="background-color: var(--buttonbg5);"  onclick="playSong('Bergentrückung.mp3', 'Bergentruckung')">Bergentruckung</button>
+  <button style="background-color: var(--buttonbg6);"  onclick="playSong('Death by Glamour.mp3', 'Death by Glamour')">Death by Glamour</button>
+  <button style="background-color: var(--buttonbg7);"  onclick="playSong('Determination.mp3', 'Determination')">Determination</button>
+  <button style="background-color: var(--buttonbg8);"  onclick="playSong('Fallen Down (Reprise).mp3', 'Fallen Down (Reprise)')">Fallen Down (Reprise)</button>
+  <button style="background-color: var(--buttonbg9);"  onclick="playSong('Finale.mp3', 'Finale')">Finale</button>
+  <button style="background-color: var(--buttonbg10);"  onclick="playSong('His Theme.mp3', 'His Theme')">His Theme</button>
+  <button style="background-color: var(--buttonbg11);"  onclick="playSong('Hopes and Dreams.mp3', 'Hopes and Dreams')">Hopes and Dreams</button>
+  <button style="background-color: var(--buttonbg12);"  onclick="playSong('It\'s Showtime!.mp3', 'It\'s Showtime!')">It's Showtime!</button>
+  <button style="background-color: var(--buttonbg13);"  onclick="playSong('Metal Crusher.mp3', 'Metal Crusher')">Metal Crusher</button>
+  <button style="background-color: var(--buttonbg14);"  onclick="playSong('NGAHHH!!.mp3', 'NGAHHH!!')">NGAHHH!!</button>
+  <button style="background-color: var(--buttonbg15);"  onclick="playSong('Oh! Dungeon.mp3', 'Oh! Dungeon')">Oh! Dungeon</button>
+  <button style="background-color: var(--buttonbg16);"  onclick="playSong('Oh! One True Love.mp3', 'Oh! One True Love')">Oh! One True Love</button>
+  <button style="background-color: var(--buttonbg17);"  onclick="playSong('SAVE the World.mp3', 'SAVE the World')">SAVE the World</button>
+  <button style="background-color: var(--buttonbg18);"  onclick="playSong('Spider Dance.mp3', 'Spider Dance')">Spider Dance</button>
+  <button style="background-color: var(--buttonbg19);"  onclick="playSong('Undertale.mp3', 'Undertale')">Undertale</button>
+  <button style="background-color: var(--buttonbg20);"  onclick="playSong('Battle Against a True Hero.mp3', 'Battle Against a True Hero')">Battle Against a True Hero</button>
+  <button style="background-color: var(--buttonbg21);"  onclick="playSong('Power of -NEO-.mp3', 'Power of -NEO-')">Power of -NEO-</button>
+  <button style="background-color: var(--buttonbg22);"  onclick="playSong('MEGALOVANIA.mp3', 'MEGALOVANIA')">MEGALOVANIA</button>
+  <button style="background-color: var(--buttonbg23);"  onclick="playSong('Its TV Time!.mp3', 'Its TV Time!')">Its TV Time!</button>
+  <button style="background-color: var(--buttonbg24);"  onclick="playSong('A CYBER\'S WORLD.mp3', 'A CYBER\'S WORLD')">A CYBER'S WORLD</button>
+  <button style="background-color: var(--buttonbg25);"  onclick="playSong('Attack of the Killer Queen.mp3', 'Attack of the Killer Queen')">Attack of the Killer Queen</button>
+  <button style="background-color: var(--buttonbg26);"  onclick="playSong('Dark Sanctuary.mp3', 'Dark Sanctuary')">Dark Sanctuary</button>
+  <button style="background-color: var(--buttonbg27);"  onclick="playSong('Field of Hopes and Dreams.mp3', 'Field of Hopes and Dreams')">Field of Hopes and Dreams</button>
+  <button style="background-color: var(--buttonbg28);"  onclick="playSong('Neverending Night.mp3', 'Neverending Night')">Neverending Night</button>
+  <button style="background-color: var(--buttonbg29);"  onclick="playSong('Rude Buster.mp3', 'Rude Buster')">Rude Buster</button>
+  <button style="background-color: var(--buttonbg30);"  onclick="playSong('The Third Sanctuary.mp3', 'The Third Sanctuary')">The Third Sanctuary</button>
+  <button style="background-color: var(--buttonbg31);"  onclick="playSong('THE WORLD REVOLVING.mp3', 'THE WORLD REVOLVING')">THE WORLD REVOLVING</button>
+  <button style="background-color: var(--buttonbg32);"  onclick="playSong('Hammer of Justice.mp3', 'Hammer of Justice')">Hammer of Justice</button>
+  <button style="background-color: var(--buttonbg33);"  onclick="playSong('Asgore Runs Over Dess.mp3', 'Asgore Runs Over Dess')">Asgore Runs Over Dess</button>
+
+  <br><br>
+
+  <button style="background-color: var(--buttonbg34);" id="themechange" onclick="changeDataTheme()">Theme To-Green</button>
+  <br>
+  <button style="background-color: grey; color: white;" onclick="stopAll()">STOP</button>
+
+  <script>
+    let currentAudio = null;
+    const nowplayingText = document.getElementById("nowplaying");
+
+    function changeDataTheme() {
+      const body = document.body;
+      const themeButton = document.getElementById("themechange");
+      if (body.getAttribute("data-theme") === "green") {
+        body.setAttribute("data-theme", "blue");
+        themeButton.textContent = "Theme To-Green";
+      } else {
+        body.setAttribute("data-theme", "green");
+        themeButton.textContent = "Theme To-Blue";
+      }
+    }
+
+    function playSong(file, title) {
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      }
+
+      currentAudio = new Audio(file);
+      currentAudio.play();
+
+      nowplayingText.textContent = "Now Playing: " + title;
+    }
+
+    function stopAll() {
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+
+        nowplayingText.textContent = "Now Playing: Nothing";
+      }
+    }
+  </script>
+
+</body>
+</html>
